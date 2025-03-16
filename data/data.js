@@ -1,5 +1,5 @@
 // 💰 Gestion de l'or, lvl et des tours
-let orJoueur = 3; 
+let orJoueur = 100; 
 let orIA = 3;
 let orTour1 = 3; 
 let maxOr = 10; 
@@ -41,25 +41,48 @@ const taverniers = [
 
 // 🎴 Cartes disponibles en jeu
 const cartes = [
-    { id: 1, nom: "Lohan le puissant", hp: 6, baseHp: 6, atk: 4, atkDispo: false, img: "img/imgcard1.png", texte: "Cri de guerre : Donne +1 ATK et +1 PV aux cartes du board." },
-    { id: 2, nom: "Maya Pig", hp: 3, baseHp: 3, atk: 3, atkDispo: false, img: "img/imgcard2.png", texte: "Partout où elle passe, la nourriture trépasse !" },
-    { id: 3, nom: "Titi l'aigri", hp: 4, baseHp: 4, atk: 3, atkDispo: false, img: "img/imgcard3.png", texte: "Il n'aime personne, mais il tape fort !" },
-    { id: 4, nom: "Rayan la baston", hp: 3, baseHp: 3, atk: 4, atkDispo: false, img: "img/imgcard4.png", texte: "Personne ne l'égalera en bagarre." },
-    { id: 5, nom: "Papi béton", hp: 5, baseHp: 5, atk: 1, atkDispo: false, img: "img/imgcard5.png", texte: "Incassable comme du béton." },
-    { id: 6, nom: "Mamie la guerrière", hp: 2, baseHp: 2, atkDispo: false, atk: 5, img: "img/imgcard6.png", texte: "Elle ne rigole pas quand elle sort son rouleau !" },
-    { id: 7, nom: "Chat-Miaou le ténébreux", hp: 3, baseHp: 3, atk: 4, atkDispo: false, img: "img/imgcard7.png", texte: "Le roi des doudous." },
-    { id: 8, nom: "Kung-fu Pinceau", hp: 3, baseHp: 3, atk: 5, atkDispo: false, img: "img/imgcard8.png", texte: "Watttaaaiiiii" },
-    { id: 9, nom: "LE CHIENGG", hp: 6, baseHp: 6, atk: 4, atkDispo: false, img: "img/imgcard9.png", texte: "Je vais te manger la !!!" },
-    { id: 10, nom: "Maeva la wesh wesh", hp: 3, baseHp: 3, atk: 4, atkDispo: false, img: "img/imgcard10.png", texte: "Nan mais ça va pas ou quoiii???" },
-    { id: 11, nom: "La fée Chrystelle", hp: 2, baseHp: 2, atk: 1, atkDispo: false, img: "img/imgcard11.png", texte: "Ne vous fiez pas aux apparences ! Je suis redoutable !", criDeGuerre: (cartesBoard) => {
+    { id: 1, nom: "Flo Mediv", hp: 1, baseHp: 1, atk: 1, atkDispo: false, img: "img/imgcards/imgcard1.png", imgMinia: "img/imgcards/imgcardFight1.png", texte: "Cri de guerre : Donne +1 ATK et +1 PV aux cartes du board.", criDeGuerre: (cartesBoard) => {
         cartesBoard.forEach(carte => {
             carte.atk += 1;
             carte.hp += 1;
         });
     } },
-    { id: 12, nom: "La Doudou's family", hp: 8, baseHp: 8, atk: 2, atkDispo: false, img: "img/imgcard12.png", texte: "Moi et ma bande, on craint personne !!" },
-    { id: 13, nom: "Sam'énerve", hp: 2, baseHp: 2, atk: 7, atkDispo: false, img: "img/imgcard13.png", texte: "MANGER DES GENS !!" },
-    { id: 14, nom: "LOHAGNEEEEEE", hp: 3, baseHp: 3, atk: 6, atkDispo: false, img: "img/imgcard14.png", texte: "JE SUIS TON CAVA CAVALIER !!" },
+    { id: 2, nom: "Chounette", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard2.png", imgMinia: "img/imgcards/imgcardFight2.png", texte: "Partout où elle passe, la nourriture trépasse !" },
+    { id: 3, nom: "Lohan L'ogre", hp: 4, baseHp: 4, atk: 4, atkDispo: false, img: "img/imgcards/imgcard3.png", imgMinia: "img/imgcards/imgcardFight3.png", texte: "Il n'aime personne, mais il tape fort !" },
+    { id: 4, nom: "Sam'énerve", hp: 2, baseHp: 2, atk: 5, atkDispo: false, img: "img/imgcards/imgcard4.png", imgMinia: "img/imgcards/imgcardFight4.png", texte: "Personne ne l'égalera en bagarre." },
+    { id: 5, nom: "Floby", hp: 2, baseHp: 2, atk: 3, atkDispo: false, img: "img/imgcards/imgcard5.png", imgMinia: "img/imgcards/imgcardFight5.png", texte: "Incassable comme du béton." },
+    { id: 6, nom: "Los Mecanos", hp: 2, baseHp: 2, atkDispo: false, atk: 5, img: "img/imgcards/imgcard6.png", imgMinia: "img/imgcards/imgcardFight6.png", texte: "Elle ne rigole pas quand elle sort son rouleau !", criDeGuerre: (cartesBoard) => {
+        cartesBoard.forEach(carte => {
+            carte.atk += 2;
+            carte.hp += 0;
+        });
+    } },
+    { id: 7, nom: "Chat-Miaou", hp: 3, baseHp: 3, atk: 4, atkDispo: false, img: "img/imgcards/imgcard7.png", imgMinia: "img/imgcards/imgcardFight7.png", texte: "Le roi des doudous." },
+    { id: 8, nom: "Papy King", hp: 2, baseHp: 2, atk: 3, atkDispo: false, img: "img/imgcards/imgcard8.png", imgMinia: "img/imgcards/imgcardFight8.png", texte: "Watttaaaiiiii" },
+    { id: 9, nom: "Les amoureux de peynet", hp: 2, baseHp: 2, atk: 2, atkDispo: false, img: "img/imgcards/imgcard9.png", imgMinia: "img/imgcards/imgcardFight9.png", texte: "Je vais te manger la !!!", criDeGuerre: (cartesBoard) => {
+        cartesBoard.forEach(carte => {
+            carte.atk += 1;
+            carte.hp += 2;
+        });
+    } },
+    { id: 10, nom: "Mini-Maya", hp: 4, baseHp: 4, atk: 4, atkDispo: false, img: "img/imgcards/imgcard10.png", imgMinia: "img/imgcards/imgcardFight10.png", texte: "Nan mais ça va pas ou quoiii???" },
+    { id: 11, nom: "Jeannot", hp: 2, baseHp: 2, atk: 3, atkDispo: false, img: "img/imgcards/imgcard11.png", imgMinia: "img/imgcards/imgcardFight11.png", texte: "Ne vous fiez pas aux apparences ! Je suis redoutable !"},
+    { id: 12, nom: "Huguette", hp: 3, baseHp: 3, atk: 2, atkDispo: false, img: "img/imgcards/imgcard12.png", imgMinia: "img/imgcards/imgcardFight12.png", texte: "Moi et ma bande, on craint personne !!" },
+    { id: 13, nom: "Mamie la guerrière", hp: 2, baseHp: 2, atk: 5, atkDispo: false, img: "img/imgcards/imgcard13.png", imgMinia: "img/imgcards/imgcardFight13.png", texte: "MANGER DES GENS !!" },
+    { id: 14, nom: "Rayan", hp: 6, baseHp: 6, atk: 6, atkDispo: false, img: "img/imgcards/imgcard14.png", imgMinia: "img/imgcards/imgcardFight14.png", texte: "JE SUIS TON CAVA CAVALIER !!" },
+    { id: 15, nom: "GroLolo", hp: 7, baseHp: 7, atk: 2, atkDispo: false, img: "img/imgcards/imgcard15.png", imgMinia: "img/imgcards/imgcardFight15.png", texte: "JE SUIS TON CAVA CAVALIER !!" },
+    { id: 16, nom: "Titi l'aigri", hp: 3, baseHp: 3, atk: 2, atkDispo: false, img: "img/imgcards/imgcard16.png", imgMinia: "img/imgcards/imgcardFight16.png", texte: "Lien de sang : gagne 1 ++1 pour chaques bêtes sur le Board" },
+    { id: 17, nom: "Maya Bull", hp: 3, baseHp: 3, atk: 4, atkDispo: false, img: "img/imgcards/imgcard17.png", imgMinia: "img/imgcards/imgcardFight17.png", texte: "Cri de guerre : Donne +1 +1 aux bêtes présentes sur le board" },
+    { id: 18, nom: "Thomux", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard18.png", imgMinia: "img/imgcards/imgcardFight18.png", texte: "Pote la ! : Lui et ses potes sur le Board gagnent +1 +1" },
+    { id: 19, nom: "LES BBEW", hp: 5, baseHp: 5, atk: 2, atkDispo: false, img: "img/imgcards/imgcard19.png", imgMinia: "img/imgcards/imgcardFight19.png", texte: "La bande de potes au complet !" },
+    { id: 20, nom: "PIOU PIOU !", hp: 4, baseHp: 4, atk: 2, atkDispo: false, img: "img/imgcards/imgcard20.png", imgMinia: "img/imgcards/imgcardFight20.png", texte: "PIOU PIOU !" },
+    { id: 21, nom: "Piou Piou", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard21.png", imgMinia: "img/imgcards/imgcardFight21.png", texte: "Pote la ! : Elle et ses potes sur le Board gagnent +1 +1" },
+    { id: 22, nom: "Fufu", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard22.png", imgMinia: "img/imgcards/imgcardFight22.png", texte: "Pote la ! : Lui et ses potes sur le Board gagnent +1 +1" },
+    { id: 23, nom: "Tek", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard23.png", imgMinia: "img/imgcards/imgcardFight23.png", texte: "Pote la ! : Lui et ses potes sur le Board gagnent +1 +1" },
+    { id: 24, nom: "Lolotte", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard24.png", imgMinia: "img/imgcards/imgcardFight24.png", texte: "Pote la ! : Elle et ses potes sur le Board gagnent +1 +1" },
+    { id: 25, nom: "Ced", hp: 6, baseHp: 6, atk: 6, atkDispo: false, img: "img/imgcards/imgcard25.png", imgMinia: "img/imgcards/imgcardFight25.png", texte: "Sang Noble : Lui et ses semblables sur le Board gagnent +1 +1" },
+    { id: 26, nom: "Maeva", hp: 6, baseHp: 6, atk: 6, atkDispo: false, img: "img/imgcards/imgcard26.png", imgMinia: "img/imgcards/imgcardFight26.png", texte: "Sang Noble : Elle et ses semblables sur le Board gagnent +1 +1" },
+    { id: 27, nom: "MiniPampa", hp: 5, baseHp: 5, atk: 5, atkDispo: false, img: "img/imgcards/imgcard27.png", imgMinia: "img/imgcards/imgcardFight27.png", texte: "Pote la ! : Elle et ses potes sur le Board gagnent +1 +1" },
 ];
 
 let pvCards = [];

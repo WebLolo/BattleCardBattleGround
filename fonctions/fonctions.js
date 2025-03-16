@@ -36,22 +36,23 @@ function genererHud(type, data) {
 // // // // // // // // // // // // // // // // // // 
 function genererCarteShop(carte, emplacement) {
     return `
-        <div class="cardfight ${emplacement}" data-id="${carte.id}">
+        <div class="cardfight ${emplacement} content-card" data-id="${carte.id}">
                 
-                <img class="cardimg " src="${carte.img}" alt="${carte.nom}">
+            <img class="cardimg " src="${carte.imgMinia}" alt="${carte.nom}">
 
-                <div class="hudCardFightAtk">
-                    <p>⚔️ ${carte.atk}</p>
-                </div>
-                    
-                <div class="hudCardFightPv">
-                    <p> ❤️ ${carte.hp}</p>
-                </div>
-                <div class="hudsell">
-                    <button class="btn btn-warning btn-buy" data-id="${carte.id}">Acheter (3 💰)</button>
-                </div>
-                
+            <div class="hudCardFightAtk">
+                <p class="hudInt">${carte.atk}</p>
+            </div>
+            
+            <div class="hudCardFightPv">
+                <p class="hudInt">${carte.hp}</p>
+            </div>
+            <div class="hudbuy">
+            <button class="btnSellBoard btn-warning btn-buy" data-id="${carte.id}">Acheter (3 💰)</button>
+            </div>
+        
         </div>`;
+
         
 }
 // // // // // // // // // // // // // // // // // // 
@@ -59,20 +60,21 @@ function genererCarteVendable(carte, emplacement) {
     return `
         <div class="cardfight ${emplacement}" data-id="${carte.id}">
                 
-                <img class="cardimg " src="${carte.img}" alt="${carte.nom}">
+            <img class="cardimg " src="${carte.imgMinia}" alt="${carte.nom}">
 
-                <div class="hudCardFightAtk">
-                    <p>⚔️ ${carte.atk}</p>
-                </div>
-                    
-                <div class="hudCardFightPv">
-                    <p> ❤️ ${carte.hp}</p>
-                </div>
-                <div class="hudsell">
-                    <button class="btn btn-danger btn-sell" data-id="${carte.id}">Vendre (+1💰)</button>
-                </div>
-                
+            <div class="hudCardFightAtk">
+                <p class="hudInt">${carte.atk}</p>
+            </div>
+            
+            <div class="hudCardFightPv">
+                <p class="hudInt">${carte.hp}</p>
+            </div>
+            <div class="hudsellBoard">
+                <button class="btnSellBoard btn-danger btn-sell" data-id="${carte.id}">Vendre (+1💰)</button>
+            </div>
+        
         </div>`;
+
         
 }
 
@@ -80,16 +82,15 @@ function genererCartePendantCombat(carte, emplacement) {
     return `
         <div class="cardfight ${emplacement}" data-id="${carte.id}">
                 
-                <img class="cardimg " src="${carte.img}" alt="${carte.nom}">
+            <img class="cardimg " src="${carte.imgMinia}" alt="${carte.nom}">
 
-                <div class="hudCardFightAtk">
-                    <p>⚔️ ${carte.atk}</p>
-                </div>
-                    
-                <div class="hudCardFightPv">
-                    <p> ❤️ ${carte.hp}</p>
-                </div>
-                
+            <div class="hudCardFightAtk">
+                <p class="hudInt">${carte.atk}</p>
+            </div>
+            
+            <div class="hudCardFightPv">
+                <p class="hudInt">${carte.hp}</p>
+            </div>       
         </div>`;
         
 }
@@ -99,34 +100,35 @@ function genererCarteIa(carte, emplacement) {
     return `
         <div class="cardfight ${emplacement}" data-id="${carte.id}">
                 
-                <img class="cardimgIa " src="${carte.img}" alt="${carte.nom}">
+            <img class="cardimg " src="${carte.imgMinia}" alt="${carte.nom}">
 
-                <div class="hudCardFightAtk">
-                    <p>⚔️ ${carte.atk}</p>
-                </div>
-                    
-                <div class="hudCardFightPv">
-                    <p> ❤️ ${carte.hp}</p>
-                </div>
-                
+            <div class="hudCardFightAtk">
+                <p class="hudInt">${carte.atk}</p>
+            </div>
+            
+            <div class="hudCardFightPv">
+                <p class="hudInt">${carte.hp}</p>
+            </div>       
         </div>`;
+
         
 }
 function genererCarteDeck(carte, index){
     return `
-            <div class="cardInDeck${index} text-white bg-dark mb-3 me-2 " data-id="${carte.id}" style="width: 15rem;" 
-                draggable="true" 
-                ondragstart="startDrag(event, ${carte.id})">
-                <img class="card-img-top" src="${carte.img}" alt="Image de ${carte.nom}">
-                <div class="card-body">
-                    <h5 class="card-title">${carte.nom}</h5>
-                    <div class="card-footer d-flex justify-content-between">
-                        <p>❤️ ${carte.hp}</p>
-                        <p>⚔️ ${carte.atk}</p>
-                    </div>
-                    <button class="btn btn-danger btn-sell" data-id="${carte.id}">Vendre (+1💰)</button>
+            <div class="cardInDeck${index} text-white mb-3 me-2" data-id="${carte.id}" draggable="true" ondragstart="startDrag(event, ${carte.id})">
+                
+                <img class="fullCard" src="${carte.img}" alt="">
+            
+                <div class="hudCardDeckAtk">
+                    <p class="hudInt">${carte.atk}</p>
                 </div>
+                
+                <div class="hudCardDeckPv">
+                    <p class="hudInt">${carte.hp}</p>
+                </div>
+            
             </div>`;
+
 }
 
 
@@ -346,6 +348,7 @@ function clonerCarte(carte, camp) {
         hp: carte.hp, // PV actuels
         atk: carte.atk, // ATK actuelle
         img: carte.img,
+        imgMinia: carte.imgMinia,
         texte: carte.texte,
         baseHp: carte.hp, // PV de base
         baseAtk: carte.atk, // ATK de base
@@ -561,6 +564,14 @@ function checkForDeathAndRemove(entity, entityRole, boardJoueurTest, boardIaTest
             }
         }
     }
+}
+
+function musiqueDeFond(url){
+    let musique = document.getElementById("musiqueAmbiance");
+    musique.src = url;
+    musique.volume = 0.5;
+    musique.load();
+    musique.play()
 }
 
 

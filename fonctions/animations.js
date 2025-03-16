@@ -68,7 +68,7 @@ function supprimerCarteVisuellement(carte, camp) {
 async function shake(carte){
     let shakeElement = document.querySelector(`.playerBoard [data-id="${carte.id}"]`) ||
                         document.querySelector(`.iaBoard [data-id="${carte.id}"]`);
-    await sleep(300);
+    await sleep(350);
     if(shakeElement.classList === "animate__animated"){
         shakeElement.classList.remove("animate__animated", "animate__headShake")
         shakeElement.classList.add("animate__animated", "animate__headShake")
