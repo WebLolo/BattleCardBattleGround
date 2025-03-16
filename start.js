@@ -1,4 +1,6 @@
 async function startGame() {
+    
+    
     document.querySelector(".iaBoard").classList.add("d-none");
     let message1 = addImgContentAppend(".playerBoard", "img/message1.png", "imgMessage");
     await sleep(2000);
@@ -16,6 +18,7 @@ async function startGame() {
 }
 
 function choisirPersonnage(personnage) {
+    musiqueDeFond("audio/Audio1.wav")
     personnageJoueur = personnage
     phaseActuelle = phases[1]
     // Mettre à jour le HUD du joueur
@@ -39,6 +42,7 @@ function choisirPersonnage(personnage) {
 }
 
 function phaseShop(){
+    
     cartesBoard.forEach(carte => {
         let carteOriginale = cartes.find(c => c.id === carte.id);
         if (carteOriginale) {

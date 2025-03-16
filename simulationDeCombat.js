@@ -1,5 +1,13 @@
+
 async function cul() {
-    let boardJoueurTest = []
+
+
+    
+
+
+
+
+let boardJoueurTest = []
 let boardIaTest = []
 boardJoueurTest.push(clonerCarte(cartes[8], "joueur"));
 boardJoueurTest.push(clonerCarte(cartes[1], "joueur"));
@@ -138,6 +146,8 @@ if(boardJoueurTest.length === 0 && boardIaTest.length > 0){
     
 }
 cul()
+
+
 
 
 
