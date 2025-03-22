@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+}
+
+.fond{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+}
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: none; /* Caché par défaut */
+    z-index: 1000;
+}
+
+.popup button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 5px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.iaAndTaverneHud{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hudActu{
+    position: absolute;
+    max-width: 10%;
+    left: 32%;
+    top: 10%;
+}
+.hudLvlUp{
+    position: absolute;
+    max-width: 10%;
+    right: 32%;
+    top: 10%;
+
+}
+.hudPersoShop{
+    position: absolute;
+    left: 41.5%;
+    max-width: 17%;
+
+
+}
+
+.hpimghudIa{
+    position: absolute;
+    max-width: 2.6%;
+    top: 21%;
+    left: 48.7%
+
+}
+
+.iaPv{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    top: 22.5%
+}
+
+.shopBoard{
+    position: absolute;
+    top: 31%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.cardfight{
+    position: relative;
+    width: 15vh;
+}
+
+
+.cardimg{
+    position: absolute;
+    max-width: 100%;
+}
+.hudIntAtk{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 1.3vw;
+    font-weight: 700;
+    bottom: 20%;
+    left: 15%;
+    margin-bottom: 0;
+
+}
+.hudIntPv{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 1.3vw;
+    font-weight: 700;
+    bottom: 20%;
+    right: 13%;
+    margin-bottom: 0;
+
+
+
+
+}
+.btn-buy{
+    position: absolute;
+    max-width: 100%;
+    bottom: 10%;
+    left: 39%
+}
+
+.btnperso {
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+    --bs-btn-font-family: ;
+    --bs-btn-font-size: 1rem;
+    --bs-btn-font-weight: 200;
+    --bs-btn-line-height: 1.5;
+    --bs-btn-color: var(--bs-body-color);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: var(--bs-border-radius);
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+    --bs-btn-disabled-opacity: 0.65;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+    display: inline-block;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    font-family: var(--bs-btn-font-family);
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    color: var(--bs-btn-color);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.iaBoard{
+    position: absolute;
+    top: 31%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.playerBoard{
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    right: 24%;
+    bottom: 31%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-sell{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 10%;
+    left: 39%
+}
+
+.footer{
+    position: absolute;
+    top: 67%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hpimghud{
+    position: absolute;
+    max-width: 2.6%;
+    bottom: 12%;
+    left: 48.7%
+
+}
+
+.playerPv{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    bottom: 12%
+}
+
+.playerOr{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    left : 55%;
+    bottom: 20%
+}
+
+.playerLvl{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    bottom: 20%;
+    left: 43%
+
+
+}
+.taverneCost{
+    position: absolute;
+    right: 35.5%;
+    top: 11%;
+    font-weight: 700;
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.playerDeck{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.fullCard{
+    max-width: 100%;
+}
+.cardInDeck0{
+    max-width: 10.5%;
+    position: absolute;
+    
+}
+
+.cardInDeck1 {
+    max-width: 10.5%;
+    margin-left: 5%;
+    position: absolute;
+}
+.cardInDeck2 {
+    max-width: 10.5%;
+    margin-left: 10%;
+    position: absolute;
+}
+.cardInDeck3 {
+    max-width: 10.5%;
+    margin-left: 15%;
+    position: absolute;
+}
+.cardInDeck4 {
+    max-width: 10.5%;
+    margin-left: 20%;
+    position: absolute;
+}
+.cardInDeck5 {
+    max-width: 10.5%;
+    margin-left: 25%;
+    position: absolute;
+}
+.cardInDeck6 {
+    max-width: 10.5%;
+    margin-left: 30%;
+    position: absolute;
+}
+
+.nextPhaseButton{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
