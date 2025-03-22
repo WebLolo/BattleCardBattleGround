@@ -24,7 +24,7 @@ function genererHud(type, data) {
 // // // // // // // // // // // // // // // // // // 
 function genererCarteShop(carte, emplacement) {
     return `
-            <div class="cardfight ${emplacement} content-card" data-id="${carte.id}">
+            <div class="cardfight ${emplacement} content-card animate__animated animate__backInLeft" data-id="${carte.id}" data-fullimg="${carte.img}">
                 <img class="cardimg" src="${carte.imgMinia}" alt="${carte.nom}">
                 <div class="hudIntAtk">${carte.atk}</div>
                 <button class="btnperso btnSellBoard btn-warning btn-buy" data-id="${carte.id}">3 💰</button>
@@ -37,7 +37,7 @@ function genererCarteShop(carte, emplacement) {
 // // // // // // // // // // // // // // // // // // 
 function genererCarteVendable(carte, emplacement) {
     return `
-            <div class="cardfight ${emplacement} content-card" data-id="${carte.id}">
+            <div class="cardfight ${emplacement} content-card animate__animated animate__backInLeft" data-id="${carte.id}" data-fullimg="${carte.img}">
                 <img class="cardimg" src="${carte.imgMinia}" alt="${carte.nom}">
                 <div class="hudIntAtk">${carte.atk}</div>
                 <button class="btnperso btnSellBoard btn-danger btn-sell" data-id="${carte.id}">+1💰</button>
@@ -50,7 +50,7 @@ function genererCarteVendable(carte, emplacement) {
 
 function genererCartePendantCombat(carte, emplacement) {
     return `
-            <div class="cardfight ${emplacement}" data-id="${carte.id}">
+            <div class="cardfight ${emplacement} " data-id="${carte.id}" data-fullimg="${carte.img}">
                 <img class="cardimg" src="${carte.imgMinia}" alt="${carte.nom}">
                 <div class="hudIntAtk">${carte.atk}</div>
                 <div class="hudIntPv">${carte.hp}</div>                    
@@ -63,7 +63,7 @@ function genererCartePendantCombat(carte, emplacement) {
 // // // // // // // // // // // // // // // // // // 
 function genererCarteIa(carte, emplacement) {
     return `
-            <div class="cardfight ${emplacement}" data-id="${carte.id}">
+            <div class="cardfight ${emplacement} " data-id="${carte.id}" data-fullimg="${carte.img}">
                 <img class="cardimg" src="${carte.imgMinia}" alt="${carte.nom}">
                 <div class="hudIntAtk">${carte.atk}</div>
                 <div class="hudIntPv">${carte.hp}</div>
@@ -73,7 +73,7 @@ function genererCarteIa(carte, emplacement) {
 }
 function genererCarteDeck(carte, index){
     return `
-            <div class="cardInDeck${index} text-white mb-3 me-2" data-id="${carte.id}" draggable="true" 
+            <div class="cardInDeck${index} text-white mb-3 me-2" data-fullimg="${carte.img}" data-id="${carte.id}" draggable="true" 
                 ondragstart="startDrag(event, ${carte.id})">
                 
                 <img class="fullCard" data-id="${carte.id}" src="${carte.img}" alt="${carte.nom}">
