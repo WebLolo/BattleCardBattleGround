@@ -3,6 +3,7 @@ function genererHud(type, data) {
     if (type === "joueur") {
         return `
             <img class="hudPersoShop" src="${data.imgLink}" alt="${data.nom}">
+            <img class="orlvlimghud" src="img/orlvlimghud.png" alt="">
             <div id="playerOr" class="playerOr">${orJoueur}</div>
             <img class="hpimghud" src="img/hpimghud.png" alt="">
             <div id="playerPv" class="playerPv">${data.hp}</div>
@@ -17,8 +18,22 @@ function genererHud(type, data) {
         return `<img class="hudPersoShop" src="${data.imgLink}" alt="${data.nom}">
                 <img class="hpimghudIa" src="img/hpimghud.png" alt="">
                 <div id="playerPvIA" class="iaPv">${data.hp}</div>`;
-    }
+     }else if (type === "joueur2") {
+        return `
+            <img class="hudPersoShop" src="${data.imgLink}" alt="${data.nom}">
+            <img class="orlvlimghud" src="img/orlvlimghud.png" alt="">
+            <div id="playerTwoOr" class="playerTwoOr">${orJoueur2}</div>
+            <img class="hpimghudPlayerDeux" src="img/hpimghud.png" alt="">
+            <div id="playerDeuxPv" class="playerDeuxPv">${data.hp}</div>
+            <div id="playerTwoLvl" class="playerTwoLvl">${lvlTaverneJoueur2}</div>`;
+    } else if (type === "tavernierJoueur2") {
+        return `       
+            <img type="button" onclick="actualiserBoutiqueJoueurDeux()" class="hudActu" src="img/bouton_actualiser.png" alt="">
+            <img class="hudPersoShop" src="img/chounette_la_taverniere.png" alt="">
+            <img type="button" onclick="lvlUpTaverneJoueurDeux(event)" class="hudLvlUp" src="img/bouton_lvlup_taverne.png" alt="">
+            <div id="taverneCost" class="taverneCost">${coutLvlTaverneJoueur2[lvlTaverneJoueur2]}</div>`;
     
+    }
 }
 
 // // // // // // // // // // // // // // // // // // 
@@ -71,6 +86,7 @@ function genererCarteIa(carte, emplacement) {
 
         
 }
+
 function genererCarteDeck(carte, index){
     return `
             <div class="cardInDeck${index} text-white mb-3 me-2" data-fullimg="${carte.img}" data-id="${carte.id}" draggable="true" 
@@ -114,6 +130,8 @@ function majAffichageDeck() {
 
 
 
+
+
 // ✅ Fonction pour mettre à jour l'affichage du board du joueur
 function majAffichageBoard() {
     let boardContainer = document.querySelector(".playerBoard");
@@ -128,6 +146,8 @@ function majAffichageBoard() {
         button.addEventListener("click", vendreCarte);
     });
 }
+
+
 
 function majAffichageBoardPendantCombat(cartesJoueur,cartesIA) {
     if (!cartesJoueur) cartesJoueur = [];
@@ -148,6 +168,8 @@ function majAffichageBoardPendantCombat(cartesJoueur,cartesIA) {
     });
 }
 
+
+
 // ✅ Fonction pour mettre à jour l'affichage du board de l'IA
 function majAffichageBoardIA() {
     let iaBoardContainer = document.querySelector(".iaBoard");
@@ -157,10 +179,6 @@ function majAffichageBoardIA() {
         iaBoardContainer.insertAdjacentHTML("beforeend", genererCarteIa(carte, "ia"));
     });
 }
-
-
-
-
 
 
 
@@ -181,6 +199,10 @@ function majAffichageShop() {
         button.addEventListener("click", acheterCarte);
     });
 }
+
+
+
+
 
 
 
@@ -216,6 +238,7 @@ function acheterCarte(event) {
     majAffichageDeck();
     majAffichageShop();
 }
+
 
 
 
@@ -264,24 +287,47 @@ function dropCard(event) {
     }
 
     // 🃏 Ajouter la carte au board
-    cartesBoard.push(clonerCarte(carte, "joueur"));
-    
-    cartesDeck.splice(carteIndex, 1); // Supprimer la carte du deck
+    let nouvelleCarte = clonerCarte(carte, "joueur");
+    cartesBoard.push(nouvelleCarte);
+    cartesDeck.splice(carteIndex, 1);
 
-    console.log(`📤 Carte déplacée du deck au board : ${carte.nom}`);
-     // Vérifier si la carte a un Cri de guerre
-     if (carte.criDeGuerre) {
+    if (nouvelleCarte.criDeGuerre) {
         console.log(`📢 Cri de guerre activé pour ${carte.nom}`);
-        carte.criDeGuerre(cartesBoard)
-        majAffichageBoard();
+        
+        if (carte.cibleUnique) {
+            console.log(`🎯 Cri de guerre ciblé sur UNE seule carte pour ${carte.nom}`);
+            appliquerCriDeGuerreSurUneCible(cartesBoard, carte.criDeGuerre);
+        } else {
+            carte.criDeGuerre(cartesBoard); // Effet sur tout le board
+        }
     }
     
+    if (nouvelleCarte.poteLa) {
+        console.log(`📢 Pote la ! activé pour ${carte.nom}`);
+        carte.poteLa(cartesBoard)
 
+    }
+    if (nouvelleCarte.sangNoble) {
+        console.log(`📢 Sang Noble activé pour ${carte.nom}`);
+        carte.sangNoble(cartesBoard)
+
+    }
+
+    if (carte.nom === "Mini-Maya"){
+        SFX("audio/Audio2.mp3")
+    }
+    
+    
     // 🔄 Mettre à jour l'affichage du deck et du board
+    appliquerEffetDeCouple(nouvelleCarte, cartesBoard);
     majAffichageDeck();
     majAffichageBoard();
+    
    
 }
+
+
+
 
 // Fonction pour afficher le popup
 function afficherPopup(message) {
@@ -308,9 +354,43 @@ function clonerCarte(carte, camp) {
         buffAtk: 0, // Valeur des buffs ATK reçus
         atkDispo: true,
         criDeGuerre: carte.criDeGuerre ? (cartesBoard) => carte.criDeGuerre(cartesBoard) : null,
-        camp: camp // ✅ Ajout du camp
+        poteLa: carte.poteLa ? (cartesBoard) => carte.poteLa(cartesBoard) : null,
+        sangNoble: carte.sangNoble ? (cartesBoard) => carte.sangNoble(cartesBoard) : null,
+        effetDeCouple: carte.effetDeCouple ? { ...carte.effetDeCouple } : null,
+        effetApplique: carte.effetApplique || false, // ✅ Conserve l'état de l'effet
+        camp: camp, // ✅ Ajout du camp
+        famille: carte.famille
     };
 }
+function appliquerEffetDeCouple(carteAjoutee, cartesBoard) {
+    if (!carteAjoutee.effetDeCouple || cartesEffetDeCoupleApplique.has(carteAjoutee.id)) {
+        return; // ✅ Si la carte n'a pas d'effet de couple ou a déjà appliqué l'effet, on ne fait rien
+    }
+
+    let partenaireTrouve = cartesBoard.find(c => c.nom === carteAjoutee.effetDeCouple.partenaire);
+
+    if (partenaireTrouve) {
+        console.log(`💑 Effet de couple activé pour ${carteAjoutee.nom} (partenaire : ${partenaireTrouve.nom})`);
+
+        // 🆕 Appliquer l'effet UNIQUEMENT à la carte posée, pas à toutes
+        carteAjoutee.effetDeCouple.effet(cartesBoard);
+
+        // 🔒 Marquer la carte comme ayant déjà appliqué son effet
+        cartesEffetDeCoupleApplique.add(carteAjoutee.id);
+    }
+}
+
+function appliquerCriDeGuerreSurUneCible(cartesBoard, effet) {
+    if (cartesBoard.length === 0) return;
+
+    let cible = cartesBoard[Math.floor(Math.random() * cartesBoard.length)];
+    
+    console.log(`🎯 Cri de guerre appliqué sur ${cible.nom}`);
+
+    effet(cible); // ✅ Applique l'effet à la carte choisie
+}
+
+
 
 
 // // // // // // // // // // // // // // // // // //
@@ -361,7 +441,7 @@ function actualiserBoutique(force = false) {
 
     if (!force) {
         orJoueur -= 1; // Déduire 1 or
-        document.querySelector("#playerOr").textContent = orJoueur; // 🔄 Mise à jour de l'affichage de l'or
+        document.querySelector("#playerOr").textContent = orJoueur;
     }
 
     console.log("🔄 Boutique réactualisée !");
@@ -371,15 +451,23 @@ function actualiserBoutique(force = false) {
         return;
     }
 
-    let cartesDisponibles = Object.values(cartes);
-    let nbCartes = Math.min(getNombreCartesShop(lvlTaverne), cartesDisponibles.length); // Utilisation de la fonction
+    // 🆕 Filtrer les cartes disponibles en fonction du niveau de la taverne
+    let cartesDisponibles = Object.values(cartes).filter(carte => carte.lvl <= lvlTaverne);
+
+    if (cartesDisponibles.length === 0) {
+        console.warn("⚠️ Aucune carte disponible pour le niveau de taverne actuel !");
+        return;
+    }
+
+    let nbCartes = Math.min(getNombreCartesShop(lvlTaverne), cartesDisponibles.length);
     cartesShop = getCartesAleatoires(cartesDisponibles, nbCartes);
 
     // ✅ Met à jour l'affichage du shop
     majAffichageShop();
 
-    console.log("✅ Nouvelle boutique générée avec", nbCartes, "cartes !");
+    console.log(`✅ Nouvelle boutique générée avec ${nbCartes} cartes !`);
 }
+
 function lvlUpTaverne(event) {
     event.stopPropagation(); // Empêche le clic de se propager à d'autres boutons
 
@@ -520,10 +608,22 @@ function checkForDeathAndRemove(entity, entityRole, boardJoueurTest, boardIaTest
 function musiqueDeFond(url){
     let musique = document.getElementById("musiqueAmbiance");
     musique.src = url;
-    musique.volume = 0.5;
+    musique.volume = 0.1;
     musique.load();
     musique.play()
 }
+
+function SFX(url){
+    let sfx = document.getElementById("effetSonore");
+    sfx.src = url;
+    sfx.volume = 0.2;
+    sfx.load();
+    sfx.play()
+}
+
+
+
+
 
 
 

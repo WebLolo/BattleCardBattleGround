@@ -18,6 +18,7 @@
 
 
     <div class="header">
+        <div class="annonceJoueur">joueur1</div>
         <div id="popupErreur" class="popup">
             <p id="popupMessage"></p>
             <button onclick="fermerPopup()">OK</button>
@@ -36,10 +37,17 @@
             <img type="button" onclick="lvlUpTaverne(event)" class="hudLvlUp" src="img/bouton_lvlup_taverne.png" alt="">
             <div id="taverneCost" class="taverneCost">1</div>
         </div>
-        <div class="iaAndTaverneHud">
+        <div class="iaAndTaverneHud d-none">
             <img class="hudPersoShop" src="img/persodariushud1.png" alt="">
             <img class="hpimghudIa" src="img/hpimghud.png" alt="">
             <div id="playerPvIA" class="iaPv">30</div>
+        </div>
+        <div class="iaAndTaverneHud">
+            <img class="hudPersoShop" src="img/persodariushud1.png" alt="">
+            <div id="playerTwoOr" class="playerTwoOr">10</div>
+            <img class="hpimghudIa" src="img/hpimghud.png" alt="">
+            <div id="playerPvIA" class="iaPv">30</div>
+            <div id="playerTwoLvl" class="playerTwoLvl">1</div>
         </div>
 
 
@@ -187,10 +195,11 @@
 
         <div class="playerHud">
             <img class="hudPersoShop" src="img/persodariushud.png" alt="">
-            <div id="playerOr" class="playerOr">10</div>
-            <img class="hpimghud" src="img/hpimghud.png" alt="">
-            <div id="playerPv" class="playerPv">30</div>
-            <div id="playerLvl" class="playerLvl">1</div>                
+            <img class="orlvlimghud" src="img/orlvlimghud.png" alt="">
+            <div id="playerTwoOr" class="playerTwoOr">10</div>
+            <img class="hpimghudPlayerDeux" src="img/hpimghud.png" alt="">
+            <div id="playerDeuxPv" class="playerDeuxPv">30</div>
+            <div id="playerTwoLvl" class="playerTwoLvl">1</div>                
         </div>
         <div class="nextPhaseButton">
             <button class="btn btn-danger btn-startCombat" onclick="phaseCombat()">Lancer le combat</button>

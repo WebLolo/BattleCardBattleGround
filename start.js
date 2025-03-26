@@ -18,7 +18,7 @@ async function startGame() {
 }
 
 function choisirPersonnage(personnage) {
-    musiqueDeFond("audio/Audio1.wav")
+    musiqueDeFond("audio/Blue-field-pc.mp3")
     personnageJoueur = personnage
     phaseActuelle = phases[1]
     // Mettre à jour le HUD du joueur
@@ -97,10 +97,10 @@ function phaseShop(){
 
     let nextPhaseButton = document.querySelector(".nextPhaseButton");
     nextPhaseButton.classList.add("fade-in");
-    nextPhaseButton.innerHTML = `<button class="btn btn-success btn-phaseSuivante" onclick="phasePreparation()">Phase suivante</button>`;
+    nextPhaseButton.innerHTML = `<button class="btn btn-danger btn-startCombat" onclick="phaseCombat()">Lancer le combat</button>`;
 
-    // 🔄 Générer la boutique
-    let cartesDisponibles = Object.values(cartes);
+    // 🔄 Filtrer les cartes en fonction du niveau de taverne
+    let cartesDisponibles = Object.values(cartes).filter(carte => carte.lvl <= lvlTaverne);
     let nbCartes = Math.min(getNombreCartesShop(lvlTaverne), cartesDisponibles.length);
     cartesShop = getCartesAleatoires(cartesDisponibles, nbCartes);
 
@@ -108,12 +108,6 @@ function phaseShop(){
     document.querySelector("#playerOr").textContent = orJoueur;
     tourIA();
 
-
-
-    // 🕹️ Ajouter le bouton "Lancer le combat"
-    document.querySelector(".nextPhaseButton").innerHTML = `
-        <button class="btn btn-danger btn-startCombat" onclick="phaseCombat()">Lancer le combat</button>
-    `;
 
     majAffichageShop();
     majAffichageDeck();

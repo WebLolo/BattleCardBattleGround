@@ -182,6 +182,25 @@ html { overflow-y: hidden; }
     justify-content: center;
 }
 
+.playerDeuxBoard{
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    right: 24%;
+    bottom: 31%;
+    display: flex;
+    justify-content: center;
+}
+.fight{
+    position: absolute;
+    top: 31%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .playerBoard{
     position: absolute;
     top: 50%;
@@ -215,6 +234,18 @@ html { overflow-y: hidden; }
     left: 48.7%
 
 }
+.hpimghudPlayerDeux{
+    position: absolute;
+    max-width: 2.6%;
+    bottom: 12%;
+    left: 48.7%
+}
+.hpimghudPlayerDeuxFight{
+    position: absolute;
+    max-width: 2.6%;
+    top: 21%;
+    left: 48.7%
+}
 
 .playerPv{
     position: absolute;
@@ -224,14 +255,30 @@ html { overflow-y: hidden; }
     left: 49%;
     bottom: 12%
 }
+.playerDeuxPv{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    bottom: 12%
+}
+.playerDeuxPvFight{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    top: 22.4%
+}
 
 .playerOr{
     position: absolute;
     color: beige;
     font-size: 2vw;
     font-weight: 700;
-    left : 55%;
-    bottom: 20%
+    left : 60%;
+    bottom: 53.2%
 }
 
 .playerLvl{
@@ -239,10 +286,58 @@ html { overflow-y: hidden; }
     color: beige;
     font-size: 2vw;
     font-weight: 700;
-    bottom: 20%;
-    left: 43%
+    bottom: 37%;
+    left: 60%
 
 
+}
+.playerTwoOr{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    left : 60%;
+    bottom: 53.2%
+}
+.playerTwoOrFight{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    left : 60%;
+    top: 8%
+}
+
+.playerTwoLvl{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    bottom: 37%;
+    left: 60%
+}
+
+.playerTwoLvlFight{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    top: 13.3%;
+    left: 60%;
+
+
+}
+.orlvlimghud{
+    position: absolute;
+    max-width: 6.8%;
+    bottom: 32%;
+    left: 57%
+}
+.orlvlimghudFight{
+    position: absolute;
+    max-width: 6.8%;
+    top: 8%;
+    left: 57%
 }
 .taverneCost{
     position: absolute;
@@ -254,6 +349,13 @@ html { overflow-y: hidden; }
 }
 
 .playerDeck{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.playerDeuxDeck{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -348,4 +450,33 @@ html { overflow-y: hidden; }
 #cardPreview.show {
     visibility: visible;
     opacity: 1;
+}
+
+.annonceJoueur{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 0;
+    bottom: 0;
+    color: aliceblue;
+    font-size: larger;
+    font-weight: 700;
+}
+
+video {
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow:auto
+}
+.video{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.imgMessage{
+    max-width: 60%;
+    max-height: 60%;
 }

@@ -1,8 +1,8 @@
-function animerAttaque(carteAttaquante, carteCible, callback) {
+function animerAttaque1v1(carteAttaquante, carteCible, callback) {
     let attaquantElement = document.querySelector(`.playerBoard [data-id="${carteAttaquante.id}"]`) ||
-                           document.querySelector(`.iaBoard [data-id="${carteAttaquante.id}"]`);
+                           document.querySelector(`.playerDeuxBoard [data-id="${carteAttaquante.id}"]`);
     let cibleElement = document.querySelector(`.playerBoard [data-id="${carteCible.id}"]`) ||
-                       document.querySelector(`.iaBoard [data-id="${carteCible.id}"]`);
+                       document.querySelector(`.playerDeuxBoard [data-id="${carteCible.id}"]`);
 
     if (!attaquantElement || !cibleElement) {
         console.error("❌ Impossible de trouver les cartes pour l'animation !");
@@ -35,7 +35,7 @@ function animerAttaque(carteAttaquante, carteCible, callback) {
     // Appliquer la transformation pour l'attaque
     attaquantElement.style.transition = "transform 0.3s ease-in-out";
     attaquantElement.style.transform = `translate(${distanceX}px, ${distanceY}px)`;
-    shake(carteCible)
+    shake1v1(carteCible)
     
 
 
@@ -50,10 +50,10 @@ function animerAttaque(carteAttaquante, carteCible, callback) {
     
 }
 
-function supprimerCarteVisuellement(carte, camp) {
+function supprimerCarteVisuellement1v1(carte, camp) {
     if (!carte) return; // Si la carte est undefined, on ne fait rien
 
-    let boardElement = camp === "joueur" ? document.querySelector(".playerBoard") : document.querySelector(".iaBoard");
+    let boardElement = camp === "joueur" ? document.querySelector(".playerBoard") : document.querySelector(".playerDeuxBoard");
     let carteElement = document.querySelector(`[data-id="${carte.id}"]`);
 
     if (carteElement) {
@@ -65,9 +65,9 @@ function supprimerCarteVisuellement(carte, camp) {
 }
 
 
-async function shake(carte){
+async function shake1v1(carte){
     let shakeElement = document.querySelector(`.playerBoard [data-id="${carte.id}"]`) ||
-                        document.querySelector(`.iaBoard [data-id="${carte.id}"]`);
+                        document.querySelector(`.playerDeuxBoard [data-id="${carte.id}"]`);
     await sleep(350);
     if(shakeElement.classList === "animate__animated"){
         shakeElement.classList.remove("animate__animated", "animate__headShake")

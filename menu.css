@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    background-image: url("img/menu/fond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.iaGame{
+    position: absolute;
+    left : 42%;
+    top: 45%;
+    max-width: 20%;
+}
+.duelGame{
+    position: absolute;
+    left : 42%;
+    top: 56%;
+    max-width: 20%;
+}
+
