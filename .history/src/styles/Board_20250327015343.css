@@ -1,0 +1,10 @@
+.playerBoard{
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    right: 24%;
+    bottom: 31%;
+    display: flex;
+    justify-content: center;
+}
+  

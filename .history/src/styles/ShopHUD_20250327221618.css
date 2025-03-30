@@ -1,0 +1,38 @@
+.shopHud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hudPersoShop{
+  max-width: 17%;
+}
+
+.hudActu{
+  position: absolute;
+  max-width: 10%;
+  left: 32%;
+  top: 30%;
+}
+
+.hudLvlUp{
+  position: absolute;
+  max-width: 10%;
+  right: 32%;
+  top: 30%;
+}
+
+.taverneCost{
+  position: absolute;
+  right: 35.5%;
+  top: 28%;
+  font-weight: 700;
+  font-size: 2vh;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+

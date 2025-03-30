@@ -1,0 +1,26 @@
+.shop-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .shop-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+  }
+  
+  .shop-card img {
+    width: 80px;
+    height: 100px;
+  }
+  
+  .shop-card button {
+    margin-top: 5px;
+    background: gold;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,18 @@
+  .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .board-top, .board-bottom, .shop {
+    display: flex;
+    justify-content: center;
+  }
+  .boardTopContainer{
+    display: flex;
+}
+  
+  

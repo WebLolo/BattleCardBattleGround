@@ -1,0 +1,62 @@
+.playerDeck{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.cardInDeck0{
+    max-width: 22%;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    
+}
+
+.cardInDeck1 {
+    max-width: 22%;
+    margin-left: 5%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+}
+.cardInDeck2 {
+    max-width: 22%;
+    margin-left: 10%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+}
+.cardInDeck3 {
+    max-width: 22%;
+    margin-left: 15%;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+}
+.cardInDeck4 {
+    max-width: 22%;
+    margin-left: 20%;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+}
+.cardInDeck5 {
+    max-width: 22%;
+    margin-left: 25%;
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+}
+.cardInDeck6 {
+    max-width: 22%;
+    margin-left: 30%;
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+}
+
+.fullCard{
+    max-width: 100%;
+}

@@ -1,0 +1,29 @@
+.hudActu{
+
+    max-width: 10%;
+    left: 32%;
+    top: 10%;
+}
+
+.hudPersoShop{
+
+    left: 42%;
+    max-width: 16%;
+    top: 0;
+}
+
+.hudLvlUp{
+
+    max-width: 10%;
+    right: 32%;
+    top: 10%;
+}
+
+.taverneCost{
+
+    right: 35.5%;
+    top: 11%;
+    font-weight: 700;
+    font-size: 2rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

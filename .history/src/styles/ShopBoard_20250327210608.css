@@ -1,0 +1,17 @@
+.shopBoard{
+    position: absolute;
+    top: 31%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
+.cardfight{
+    position: relative;
+    width: 15vh;
+}
+.cardimg{
+    position: absolute;
+    max-width: 100%;
+}

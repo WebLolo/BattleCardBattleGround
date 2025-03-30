@@ -1,0 +1,26 @@
+.shopHud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taverniere-img {
+  height: 80px;
+}
+
+.shop-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.gold-display {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
