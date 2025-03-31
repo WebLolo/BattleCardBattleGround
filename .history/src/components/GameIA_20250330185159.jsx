@@ -106,31 +106,32 @@ export default function GameIA(){
       
         if (!draggedCard) return;
 
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.criDeGuerre ) {
-  
+        if (sourceType === "deck" && targetType === "drop-bord" ) {
+            if(draggedCard.criDeGuerre){
                 console.log(`📢 Cri de guerre activé pour ${draggedCard.nom}`);
             
                 draggedCard.criDeGuerre(boardPlayer); // Effet sur tout le board
+            }
 
         }
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.poteLa) {
+        if (sourceType === "deck" && targetType === "board" && draggedCard.poteLa) {
             console.log(`📢 Pote la ! activé pour ${draggedCard.nom}`);
             draggedCard.poteLa(boardPlayer)
     
         }
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.criDeGuerreUnique) {
+        if (sourceType === "deck" && targetType === "board" && draggedCard.criDeGuerreUnique) {
             console.log(`🎯 Cri de guerre ciblé sur UNE seule carte pour ${draggedCard.nom}`);
             let cible = boardPlayer[Math.floor(Math.random() * boardPlayer.length)];
             draggedCard.criDeGuerreUnique(cible); // Effet sur tout le board
         }
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.sangNoble) {
+        if (sourceType === "deck" && targetType === "board" && draggedCard.sangNoble) {
             console.log(`📢 Sang Noble activé pour ${draggedCard.nom}`);
             draggedCard.sangNoble(boardPlayer)
         }
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.effetDeCouple){
+        if (sourceType === "deck" && targetType === "board" && draggedCard.effetDeCouple){
             appliquerEffetDeCouple(draggedCard, boardPlayer)
         }
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.aura) {
+        if (sourceType === "deck" && targetType === "board" && draggedCard.aura) {
             console.log(`📢 Aura activé par ${draggedCard.nom}`);
             draggedCard.aura(boardPlayer)
         
@@ -139,17 +140,6 @@ export default function GameIA(){
             console.log(`📢 Aura de ${draggedCard.nom} désactivée`);
             draggedCard.auraSell(boardPlayer)
         
-        }
-        if (sourceType === "deck" && targetType === "board-drop"){
-            let auraPresent = boardPlayer.findIndex(carte => carte.aura)
-            console.log(auraPresent)
-            if (auraPresent >= 0){
-                let carteAura = boardPlayer.find(carte => carte.aura)
-                carteAura.auraUnique(draggedCard)
-            }
-            
-
-
         }
 
         

@@ -141,13 +141,8 @@ export default function GameIA(){
         
         }
         if (sourceType === "deck" && targetType === "board-drop"){
-            let auraPresent = boardPlayer.findIndex(carte => carte.aura)
+            let auraPresent = boardPlayer.find(carte => carte.aura)
             console.log(auraPresent)
-            if (auraPresent >= 0){
-                let carteAura = boardPlayer.find(carte => carte.aura)
-                carteAura.auraUnique(draggedCard)
-            }
-            
 
 
         }

@@ -11,11 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
-/build-electron/
-*.exe
-*.rar
-
+build-electron
 
 # Editor directories and files
 .vscode/*

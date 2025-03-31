@@ -153,10 +153,10 @@ export const clonerCarte = ({ carte, camp }) => {
       texte: carte.texte,
       baseHp: carte.baseHp !== undefined ? carte.baseHp : carte.hp,
       baseAtk: carte.baseAtk !== undefined ? carte.baseAtk : carte.atk,
-      buffHp: carte.buffHp !== undefined ? carte.buffHp : 0,
-      buffAtk: carte.buffAtk !== undefined ? carte.buffAtk : 0,
+      buffHp: 0, // Valeur des buffs HP reçus
+      buffAtk: 0, // Valeur des buffs ATK reçus
       atkDispo: false,
-      auraEffect: carte.auraEffect !== undefined ? carte.auraEffect : false,
+      auraEffect: false,
       criDeGuerre: carte.criDeGuerre ? (cartesBoard) => carte.criDeGuerre(cartesBoard) : null,
       criDeGuerreUnique: carte.criDeGuerreUnique ? (carteAleatoire) => carte.criDeGuerreUnique(carteAleatoire) : null,
       poteLa: carte.poteLa ? (cartesBoard) => carte.poteLa(cartesBoard) : null,

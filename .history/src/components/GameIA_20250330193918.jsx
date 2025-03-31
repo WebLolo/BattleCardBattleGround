@@ -106,11 +106,12 @@ export default function GameIA(){
       
         if (!draggedCard) return;
 
-        if (sourceType === "deck" && targetType === "board-drop" && draggedCard.criDeGuerre ) {
-  
+        if (sourceType === "deck" && targetType === "board-drop" ) {
+            if(draggedCard.criDeGuerre){
                 console.log(`📢 Cri de guerre activé pour ${draggedCard.nom}`);
             
                 draggedCard.criDeGuerre(boardPlayer); // Effet sur tout le board
+            }
 
         }
         if (sourceType === "deck" && targetType === "board-drop" && draggedCard.poteLa) {
@@ -139,17 +140,6 @@ export default function GameIA(){
             console.log(`📢 Aura de ${draggedCard.nom} désactivée`);
             draggedCard.auraSell(boardPlayer)
         
-        }
-        if (sourceType === "deck" && targetType === "board-drop"){
-            let auraPresent = boardPlayer.findIndex(carte => carte.aura)
-            console.log(auraPresent)
-            if (auraPresent >= 0){
-                let carteAura = boardPlayer.find(carte => carte.aura)
-                carteAura.auraUnique(draggedCard)
-            }
-            
-
-
         }
 
         

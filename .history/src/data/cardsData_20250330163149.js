@@ -367,33 +367,16 @@ export const cards = [
         if (carte.famille === "les bbew") {
           carte.atk += 1;
           carte.hp += 1;
-          carte.buffAtk += 1;
-          carte.buffHp += 1;
-          carte.auraEffect = true;
         }
       });
     },
     auraSell: (cartesBoard) => {
       cartesBoard.forEach(carte => {
-        if (carte.auraEffect === true) {
+        if (carte.famille === "les bbew") {
           carte.atk -= 1;
           carte.hp -= 1;
-          carte.buffAtk -= 1;
-          carte.buffHp -= 1;
-          if(carte.buffHp === 0 && carte.buffHp === 0){
-            carte.auraEffect = false
-          }        
         }
       });
-    },
-    auraUnique: (carte) => {
-      if (carte.famille === "les bbew") {
-        carte.atk += 1;
-        carte.hp += 1;
-        carte.buffAtk += 1;
-        carte.buffHp += 1;
-        carte.auraEffect = true; 
-      }     
     }
   },
   {

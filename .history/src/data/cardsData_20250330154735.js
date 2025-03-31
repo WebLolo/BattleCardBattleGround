@@ -361,40 +361,7 @@ export const cards = [
     img: "img/card19.png",
     imgMinia: "img/cardfight19.png",
     famille: "les bbew",
-    texte: "La bande de potes au complet !",
-    aura: (cartesBoard) => {
-      cartesBoard.forEach(carte => {
-        if (carte.famille === "les bbew") {
-          carte.atk += 1;
-          carte.hp += 1;
-          carte.buffAtk += 1;
-          carte.buffHp += 1;
-          carte.auraEffect = true;
-        }
-      });
-    },
-    auraSell: (cartesBoard) => {
-      cartesBoard.forEach(carte => {
-        if (carte.auraEffect === true) {
-          carte.atk -= 1;
-          carte.hp -= 1;
-          carte.buffAtk -= 1;
-          carte.buffHp -= 1;
-          if(carte.buffHp === 0 && carte.buffHp === 0){
-            carte.auraEffect = false
-          }        
-        }
-      });
-    },
-    auraUnique: (carte) => {
-      if (carte.famille === "les bbew") {
-        carte.atk += 1;
-        carte.hp += 1;
-        carte.buffAtk += 1;
-        carte.buffHp += 1;
-        carte.auraEffect = true; 
-      }     
-    }
+    texte: "La bande de potes au complet !"
   },
   {
     id: 20,

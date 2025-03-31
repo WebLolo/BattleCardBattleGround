@@ -7,6 +7,7 @@ export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 {
  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+let lesCartesMortes = [{}];
 
   
 
@@ -155,6 +156,9 @@ export async function deroulerCombatReact({
 
   await sleep(400);
   // 🔪 Ensuite on retire les cartes mortes
+  
+  let carteMorte = cartesJoueur.filter(c => c.hp <= 0);
+  lesCartesMortes.push(carteMorte)
   cartesJoueur = cartesJoueur.filter(c => c.hp > 0);
   cartesIA = cartesIA.filter(c => c.hp > 0);
   setBoardCombat([...cartesJoueur]);
@@ -176,6 +180,15 @@ export async function deroulerCombatReact({
           carte.auraEffect = carteOriginale.auraEffect
         ;
     });
+    lesCartesMortes.forEach((carte) => {
+      let carteOriginale = boardAvantCombat.find(c => c.id === carte.id);
+      if (carteOriginale) 
+        carte.hp = carteOriginale.hp,
+        carte.buffHp = carteOriginale.buffHp,
+        carte.buffAtk = carteOriginale.buffAtk,
+        carte.auraEffect = carteOriginale.auraEffect
+      ;
+  });
 
     cartesIA.forEach((carte) => {
         let carteOriginale = boardAvantCombatIA.find(c => c.id === carte.id);
@@ -198,7 +211,6 @@ export async function deroulerCombatReact({
       alert(`❌ Défaite ! Le joueur perd ${degats} PV`);
     }
   }
-  console.log(boardAvantCombat)
   // Restauration des boards à l'identique
   setBoardPlayer(
     boardAvantCombat.map(carte => clonerCarte({ carte, camp: "joueur" }))

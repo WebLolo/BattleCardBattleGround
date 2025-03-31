@@ -368,7 +368,6 @@ export const cards = [
           carte.atk += 1;
           carte.hp += 1;
           carte.buffAtk += 1;
-          carte.buffHp += 1;
           carte.auraEffect = true;
         }
       });
@@ -378,22 +377,9 @@ export const cards = [
         if (carte.auraEffect === true) {
           carte.atk -= 1;
           carte.hp -= 1;
-          carte.buffAtk -= 1;
-          carte.buffHp -= 1;
-          if(carte.buffHp === 0 && carte.buffHp === 0){
-            carte.auraEffect = false
-          }        
+          carte.auraEffect = false
         }
       });
-    },
-    auraUnique: (carte) => {
-      if (carte.famille === "les bbew") {
-        carte.atk += 1;
-        carte.hp += 1;
-        carte.buffAtk += 1;
-        carte.buffHp += 1;
-        carte.auraEffect = true; 
-      }     
     }
   },
   {

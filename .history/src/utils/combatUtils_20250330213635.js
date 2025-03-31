@@ -7,6 +7,7 @@ export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 {
  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+let lesCartesMortes = [{}];
 
   
 
@@ -155,6 +156,9 @@ export async function deroulerCombatReact({
 
   await sleep(400);
   // 🔪 Ensuite on retire les cartes mortes
+  
+  let carteMorte = cartesJoueur.filter(c => c.hp <= 0);
+  lesCartesMortes
   cartesJoueur = cartesJoueur.filter(c => c.hp > 0);
   cartesIA = cartesIA.filter(c => c.hp > 0);
   setBoardCombat([...cartesJoueur]);
@@ -198,7 +202,6 @@ export async function deroulerCombatReact({
       alert(`❌ Défaite ! Le joueur perd ${degats} PV`);
     }
   }
-  console.log(boardAvantCombat)
   // Restauration des boards à l'identique
   setBoardPlayer(
     boardAvantCombat.map(carte => clonerCarte({ carte, camp: "joueur" }))

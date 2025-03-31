@@ -153,17 +153,16 @@ export const clonerCarte = ({ carte, camp }) => {
       texte: carte.texte,
       baseHp: carte.baseHp !== undefined ? carte.baseHp : carte.hp,
       baseAtk: carte.baseAtk !== undefined ? carte.baseAtk : carte.atk,
-      buffHp: carte.buffHp !== undefined ? carte.buffHp : 0,
-      buffAtk: carte.buffAtk !== undefined ? carte.buffAtk : 0,
+      buffHp: 0, // Valeur des buffs HP reçus
+      buffAtk: 0, // Valeur des buffs ATK reçus
       atkDispo: false,
-      auraEffect: carte.auraEffect !== undefined ? carte.auraEffect : false,
+      auraEffect: false,
       criDeGuerre: carte.criDeGuerre ? (cartesBoard) => carte.criDeGuerre(cartesBoard) : null,
       criDeGuerreUnique: carte.criDeGuerreUnique ? (carteAleatoire) => carte.criDeGuerreUnique(carteAleatoire) : null,
       poteLa: carte.poteLa ? (cartesBoard) => carte.poteLa(cartesBoard) : null,
       sangNoble: carte.sangNoble ? (cartesBoard) => carte.sangNoble(cartesBoard) : null,
       aura: carte.aura ? (cartesBoard) => carte.aura(cartesBoard) : null,
       auraSell: carte.auraSell ? (cartesBoard) => carte.auraSell(cartesBoard) : null,
-      auraUnique: carte.auraUnique ? (cartesBoard) => carte.auraUnique(cartesBoard) : null,
       effetDeCouple: carte.effetDeCouple ? { ...carte.effetDeCouple } : null,
       effetApplique: carte.effetApplique || false, // ✅ Conserve l'état de l'effet
       camp: camp, // ✅ Ajout du camp

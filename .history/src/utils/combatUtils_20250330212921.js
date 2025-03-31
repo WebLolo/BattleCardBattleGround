@@ -169,6 +169,7 @@ export async function deroulerCombatReact({
       // **Réinitialisation des PV après combat avec les buffs**
       cartesJoueur.forEach((carte) => {
         let carteOriginale = boardAvantCombat.find(c => c.id === carte.id);
+        console.log(carteOriginale)
         if (carteOriginale) 
           carte.hp = carteOriginale.hp,
           carte.buffHp = carteOriginale.buffHp,
@@ -198,7 +199,6 @@ export async function deroulerCombatReact({
       alert(`❌ Défaite ! Le joueur perd ${degats} PV`);
     }
   }
-  console.log(boardAvantCombat)
   // Restauration des boards à l'identique
   setBoardPlayer(
     boardAvantCombat.map(carte => clonerCarte({ carte, camp: "joueur" }))

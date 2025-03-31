@@ -198,7 +198,6 @@ export async function deroulerCombatReact({
       alert(`❌ Défaite ! Le joueur perd ${degats} PV`);
     }
   }
-  console.log(boardAvantCombat)
   // Restauration des boards à l'identique
   setBoardPlayer(
     boardAvantCombat.map(carte => clonerCarte({ carte, camp: "joueur" }))
