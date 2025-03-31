@@ -1,0 +1,32 @@
+/* Conteneur du shop (géré via GameLayout.jsx -> className="shop") */
+.shop {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    margin: 1rem auto;
+    width: fit-content;
+  }
+  
+  /* Carte individuelle dans le shop */
+  .shop-card {
+    position: relative;
+
+    transition: transform 0.2s ease;
+
+  }
+  
+  .shop-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Image de carte dans le shop */
+  .shop-card img {
+    width: 110px;
+    height: auto;
+    border-radius: 8px;
+    cursor: grab;
+  }
+  

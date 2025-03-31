@@ -1,0 +1,39 @@
+.shopBoard{
+    position: absolute;
+    top: 31%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
+.cardfight{
+    position: relative;
+    width: 15vh;
+}
+.cardimg{
+    position: absolute;
+    max-width: 100%;
+}
+
+.hudIntAtk,
+.hudIntPv {
+  position: absolute;
+  font-weight: bold;
+  font-size: large;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  z-index: 2;
+}
+
+.hudIntAtk {
+  top: 10%;
+  left: 2.5vh;
+  margin: 0;
+}
+
+.hudIntPv {
+    top: 7.4vh;
+    left: 11.4vh;
+    margin: 0;
+}

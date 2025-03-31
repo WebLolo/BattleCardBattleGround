@@ -1,0 +1,19 @@
+.hudActu{
+    position: absolute;
+    max-width: 10%;
+    left: 32%;
+    top: 10%;
+}
+
+.hudPersoShop{
+    position: absolute;
+    left: 41.5%;
+    max-width: 16%;
+}
+
+.hudLvlUp{
+    position: absolute;
+    max-width: 10%;
+    right: 32%;
+    top: 10%;
+}

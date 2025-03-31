@@ -1,0 +1,24 @@
+.hudPersoIA{
+    position: absolute;
+    left: 41.5%;
+    max-width: 17%;
+
+
+}
+
+.hpimghudIa{
+    position: absolute;
+    max-width: 2.6%;
+    top: 21%;
+    left: 48.7%
+
+}
+
+.iaPv{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    top: 22.5%
+}

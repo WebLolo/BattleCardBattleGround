@@ -1,0 +1,10 @@
+.shopBoard{
+    position: absolute;
+    top: 33%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
+  

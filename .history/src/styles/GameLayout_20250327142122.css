@@ -1,0 +1,29 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('/img/fond3.png');
+  background-size: cover;
+  background-position: center;
+}
+  
+.hudActu{
+  position: absolute;
+  max-width: 10%;
+  left: 32%;
+  top: 30%;
+}
+
+.hudLvlUp{
+  position: absolute;
+  max-width: 10%;
+  right: 32%;
+  top: 30%;
+}
+  

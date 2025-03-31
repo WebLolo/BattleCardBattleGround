@@ -1,0 +1,12 @@
+.board {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+.boardTopContainer{
+    display: flex;
+}
+  

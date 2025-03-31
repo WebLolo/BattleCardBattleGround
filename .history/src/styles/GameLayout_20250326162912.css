@@ -1,0 +1,33 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url('/img/fond3.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hud-top, .footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .board-top, .board-bottom, .shop {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
