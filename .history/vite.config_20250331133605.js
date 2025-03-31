@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  base: './', // ✅ Chemins relatifs pour Electron
+  base: './BattleCardBattleGround', // ✅ Chemins relatifs pour Electron
   plugins: [react()],
   resolve: {
     alias: {
