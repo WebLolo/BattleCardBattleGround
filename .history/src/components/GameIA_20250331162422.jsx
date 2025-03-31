@@ -276,8 +276,7 @@ export default function GameIA(){
                                   goldTour1,
                                   setgoldTour1,
                                   setGold,
-                                  setShopCards,
-                                  navigate
+                                  setShopCards
                                 });
                               }} 
                               

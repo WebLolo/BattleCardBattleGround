@@ -27,7 +27,7 @@ import {
   } from "@/utils/shopUtils";
 
 export default function GameIA(){
-    const navigate = useNavigate();
+
     const [phase, setPhase] = useState("shop");
     const [gold, setGold] = useState(3);
     const [uniqueID, setUniqueID] = useState(1000)
@@ -276,8 +276,7 @@ export default function GameIA(){
                                   goldTour1,
                                   setgoldTour1,
                                   setGold,
-                                  setShopCards,
-                                  navigate
+                                  setShopCards
                                 });
                               }} 
                               

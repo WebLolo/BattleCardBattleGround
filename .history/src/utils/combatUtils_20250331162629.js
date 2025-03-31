@@ -209,13 +209,13 @@ export async function deroulerCombatReact({
   );
   if (playerPv - (survivantsIA.length > 0 ? (lvlTaverne + survivantsIA.length) : 0) <= 0) {
     alert("💀 Le joueur a perdu la partie !");
-    navigate("/#/menu"); // redirection vers ta page Menu.jsx
+    navigate("/menu"); // redirection vers ta page Menu.jsx
     return;
   }
   
   if (pvIA - (survivantsJoueur.length > 0 ? (lvlTaverne + survivantsJoueur.length) : 0) <= 0) {
     alert("🏆 Le joueur a gagné la partie !");
-    navigate("/#/menu"); // redirection vers ta page Menu.jsx
+    navigate("/menu"); // redirection vers ta page Menu.jsx
     return;
   }
 const nouveauGold = Math.min(goldTour1 + 1, 10);
