@@ -1,0 +1,48 @@
+.player2Hud{
+    position: relative;
+    max-width: 100%;
+}
+.hudPersoPlayer{
+    position: absolute;
+    left: 41.5%;
+    bottom: 0;
+    max-width: 17%;
+
+
+}
+.orlvlimghud{
+    position: absolute;
+    max-width: 6.8%;
+    bottom: 32%;
+    left: 57%
+}
+.playerOr{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    left : 60%;
+    bottom: 52%
+}
+.hpimghud{
+    position: absolute;
+    max-width: 2.6%;
+    bottom: 12%;
+    left: 48.7%
+}
+.playerPv{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    bottom: 12%
+}
+.playerLvl{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    bottom: 37%;
+    left: 60%
+}

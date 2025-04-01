@@ -1,0 +1,91 @@
+.hudPersoPlayer2Fight{
+    position: absolute;
+    left: 41.5%;
+    top: 0;
+    max-width: 17%;
+
+
+}
+.orlvlimghudP2Fight{
+    position: absolute;
+    max-width: 6.8%;
+    top: 8.5%;
+    left: 56.5%
+}
+.player2OrFight{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    left : 59.5%;
+    top: 8.5%;
+}
+.hpimghudP2Fight{
+    position: absolute;
+    max-width: 2.6%;
+    top: 22%;
+    left: 48.7%
+}
+.player2PvFight{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    top: 23.5%
+}
+.player2LvlFight{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    top: 13.4%;
+    left: 59.5%
+}
+
+
+
+.hudPersoPlayer2{
+    position: absolute;
+    left: 41.5%;
+    bottom: 0;
+    max-width: 17%;
+
+
+}
+.orlvlimghudP2{
+    position: absolute;
+    max-width: 6.8%;
+    bottom: 31%;
+    left: 56.5%
+}
+.player2Or{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    left : 59.5%;
+    top: 27%;
+}
+.hpimghudP2{
+    position: absolute;
+    max-width: 2.6%;
+    bottom: 18%;
+    left: 48.7%
+}
+.player2Pv{
+    position: absolute;
+    color: beige;
+    font-size: 1.7vw;
+    font-weight: 700;
+    left: 49%;
+    bottom: 18%
+}
+.player2Lvl{
+    position: absolute;
+    color: beige;
+    font-size: 2vw;
+    font-weight: 700;
+    top: 41.5%;
+    left: 59.5%
+}

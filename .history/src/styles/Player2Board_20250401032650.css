@@ -1,0 +1,18 @@
+.player2Board{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+.player2BoardFight{
+    position: absolute;
+    top: 31%;
+    left: 24%;
+    right: 24%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+}
