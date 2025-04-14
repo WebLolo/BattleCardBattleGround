@@ -1,0 +1,33 @@
+.playerBoard{
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    right: 24%;
+    bottom: 30.05%;
+    display: flex;
+    justify-content: center;
+}
+
+.drop-slot {
+  flex: 1;
+  height: 100%; /* ou fixe genre 100px si tu préfères */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.pv-damaged {
+    color: red;
+    font-weight: bold;
+    animation: shakePv 0.5s ease;
+  }
+  
+  @keyframes shakePv {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
