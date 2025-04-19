@@ -646,14 +646,14 @@ export const cards = [
         if (!carte.bivalenceSources) carte.bivalenceSources = [];
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Marin"){
           if(carte.bivalenceMarinEffect && !carte.bivalenceSources.includes("Rok’gar")){
-            carte.atk += 5 + bonus;
-            carte.buffAtkBivalence += 5 + bonus;
+            carte.atk += 4 + bonus;
+            carte.buffAtkBivalence += 4 + bonus;
             carte.bivalenceEffect = true;
             carte.bivalenceSources.push("Rok’gar");
           }
           if(!carte.bivalenceMarinEffect && carte.bivalenceSources.includes("Rok’gar")){
-            carte.atk -= 5 + bonus;
-            carte.buffAtkBivalence -= 5 + bonus;
+            carte.atk -= 4 + bonus;
+            carte.buffAtkBivalence -= 4 + bonus;
             carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Rok’gar");
             if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
               carte.bivalenceEffect = false
@@ -673,8 +673,8 @@ export const cards = [
     
           // Retrait des effets appliqués par cette source
           if (carte.bivalenceMarinEffect) {
-            carte.atk -= 5 + bonus;
-            carte.buffAtkBivalence -= 5 + bonus;
+            carte.atk -= 4 + bonus;
+            carte.buffAtkBivalence -= 4 + bonus;
           }
     
           // Suppression de la source
@@ -711,8 +711,8 @@ export const cards = [
     aura: (cartesBoard) => {
       cartesBoard.forEach(carte => {
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
-          carte.hp += 5;
-          carte.buffHp += 5;
+          carte.hp += 2;
+          carte.buffHp += 2;
           carte.auraEffect = true;
         }
         
@@ -721,8 +721,8 @@ export const cards = [
     auraSell: (cartesBoard) => {
       cartesBoard.forEach(carte => {
         if (carte.auraEffect === true && carte.sousFamille === "Terrestre") {
-          carte.hp -= 5;
-          carte.buffHp -= 5;
+          carte.hp -= 2;
+          carte.buffHp -= 2;
           if(carte.buffHp === 0 && carte.buffAtk === 0){
             carte.auraEffect = false
           }        
@@ -731,8 +731,8 @@ export const cards = [
     },
     auraUnique: (carte) => {
       if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
-        carte.hp += 5;
-        carte.buffHp += 5;
+        carte.hp += 2;
+        carte.buffHp += 2;
         carte.auraEffect = true; 
       }     
     },
@@ -745,14 +745,14 @@ export const cards = [
     
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Marin") {
           if (carte.bivalenceMarinEffect && !carte.bivalenceSources.includes("Sang'Thalla")) {
-            carte.hp += 2 + bonus;
-            carte.buffHpBivalence += 2 + bonus;
+            carte.atk += 1 + bonus;
+            carte.buffAtkBivalence += 1 + bonus;
             carte.bivalenceEffect = true;
             carte.bivalenceSources.push("Sang'Thalla");
           }
           if (!carte.bivalenceMarinEffect && carte.bivalenceSources.includes("Sang'Thalla")) {
-            carte.hp -= 2 + bonus;
-            carte.buffHpBivalence -= 2 + bonus;
+            carte.atk -= 1 + bonus;
+            carte.buffAtkBivalence -= 1 + bonus;
             carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Sang'Thalla");
             if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
               carte.bivalenceEffect = false;
@@ -762,14 +762,14 @@ export const cards = [
         
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
           if (carte.bivalenceTerrestreEffect && !carte.bivalenceSources.includes("Sang'Thalla")) {
-            carte.atk += 4 + bonus;
-            carte.buffAtkBivalence += 4 + bonus;
+            carte.hp += 3 + bonus;
+            carte.buffHpBivalence += 3 + bonus;
             carte.bivalenceEffect = true;
             carte.bivalenceSources.push("Sang'Thalla");
           }
           if (!carte.bivalenceTerrestreEffect && carte.bivalenceSources.includes("Sang'Thalla")) {
-            carte.atk -= 4 + bonus;
-            carte.buffAtkBivalence -= 4 + bonus;
+            carte.hp -= 3 + bonus;
+            carte.buffHpBivalence -= 3 + bonus;
             carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Sang'Thalla");
             if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
               carte.bivalenceEffect = false;
@@ -789,13 +789,13 @@ export const cards = [
           // Retrait des effets appliqués par cette source
           if (carte.bivalenceMarinEffect) {
             
-            carte.hp -= 2 + bonus;
-            carte.buffHpBivalence -= 2 + bonus;
+            carte.atk -= 1 + bonus;
+            carte.buffAtkBivalence -= 1 + bonus;
           }
     
           if (carte.bivalenceTerrestreEffect) {
-            carte.atk -= 4 + bonus;
-            carte.buffAtkBivalence -= 4 + bonus;
+            carte.hp -= 3 + bonus;
+            carte.buffHpBivalence -= 3 + bonus;
           }
     
           // Suppression de la source
@@ -858,14 +858,14 @@ export const cards = [
     
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Marin") {
           if (carte.bivalenceMarinEffect && !carte.bivalenceSources.includes("Kaz'Drok")) {
-            carte.atk += 4 + bonus;
-            carte.buffAtkBivalence += 4 + bonus;
+            carte.hp += 1 + bonus;
+            carte.buffHpBivalence += 1 + bonus;
             carte.bivalenceEffect = true;
             carte.bivalenceSources.push("Kaz'Drok");
           }
           if (!carte.bivalenceMarinEffect && carte.bivalenceSources.includes("Kaz'Drok")) {
-            carte.atk -= 4 + bonus;
-            carte.buffAtkBivalence -= 4 + bonus;
+            carte.hp -= 1 + bonus;
+            carte.buffHpBivalence -= 1 + bonus;
             carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Kaz'Drok");
             if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
               carte.bivalenceEffect = false;
@@ -875,14 +875,14 @@ export const cards = [
         
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
           if (carte.bivalenceTerrestreEffect && !carte.bivalenceSources.includes("Kaz'Drok")) {
-            carte.hp += 4 + bonus;
-            carte.buffHpBivalence += 4 + bonus;
+            carte.atk += 1 + bonus;
+            carte.buffAtkBivalence += 1 + bonus;
             carte.bivalenceEffect = true;
             carte.bivalenceSources.push("Kaz'Drok");
           }
           if (!carte.bivalenceTerrestreEffect && carte.bivalenceSources.includes("Kaz'Drok")) {
-            carte.hp -= 4 + bonus;
-            carte.buffHpBivalence -= 4 + bonus;
+            carte.atk -= 1 + bonus;
+            carte.buffAtkBivalence -= 1 + bonus;
             carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Kaz'Drok");
             if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
               carte.bivalenceEffect = false;
@@ -1270,18 +1270,79 @@ export const cards = [
     texte: "*",
     criDeGuerre: (cartesBoard) => {
       cartesBoard.forEach(carte => {
-          carte.atk += 2;
-          carte.hp += 2;
-          if(carte.bivalenceMarinEffect){
-            carte.atk += 2;
-            carte.hp += 1;
-          }else{
-            carte.hp += 2;
-            carte.atk += 1;
-          }
+          carte.atk += 1;
+          carte.hp += 1;
       });
     },
-
+    bivalence: (cartesBoard) => {
+      cartesBoard.forEach(carte => {
+        if (!carte.bivalenceSources) carte.bivalenceSources = [];
+        const karasha = cartesBoard.find(c => c.nom === "Ka'Rasha la Lieuse d'Esprits");
+        const bonus = karasha ? 1 : 0; // Ka'Rasha amplifie
+        if (carte.famille === "Croc-Noir" && carte.sousFamille === "Marin") {
+          if (carte.bivalenceMarinEffect && !carte.bivalenceSources.includes("Urgak")) {
+            carte.atk += 1 + bonus;
+            carte.buffAtkBivalence += 1 + bonus;
+            carte.bivalenceEffect = true;
+            carte.bivalenceSources.push("Urgak");
+          }
+          if (!carte.bivalenceMarinEffect && carte.bivalenceSources.includes("Urgak")) {
+            carte.atk -= 1 + bonus;
+            carte.buffAtkBivalence -= 1 + bonus;
+            carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Urgak");
+            if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
+              carte.bivalenceEffect = false;
+            }
+          }
+        }
+        if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
+          if (carte.bivalenceTerrestreEffect && !carte.bivalenceSources.includes("Urgak")) {
+            carte.hp += 1 + bonus;
+            carte.buffHpBivalence += 1 + bonus;
+            carte.bivalenceEffect = true;
+            carte.bivalenceSources.push("Urgak");
+          }
+          if (!carte.bivalenceTerrestreEffect && carte.bivalenceSources.includes("Urgak")) {
+            carte.hp -= 1 + bonus;
+            carte.buffHpBivalence -= 1 + bonus;
+            carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Urgak");
+            if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
+              carte.bivalenceEffect = false;
+            }
+          }
+        }
+      });
+    },
+    bivalenceSell: (cartesBoard) => {
+      cartesBoard.forEach(carte => {
+        if (!carte.bivalenceSources) return;
+        const karasha = cartesBoard.find(c => c.nom === "Ka'Rasha la Lieuse d'Esprits");
+        const bonus = karasha ? 1 : 0; // Ka'Rasha amplifie
+        // Si la source est présente dans les effets appliqués
+        if (carte.bivalenceSources.includes("Urgak")) {
+    
+          // Retrait des effets appliqués par cette source
+          if (carte.bivalenceMarinEffect) {
+            
+            carte.atk -= 1 + bonus;
+            carte.buffAtkBivalence -= 1 + bonus;
+          }
+    
+          if (carte.bivalenceTerrestreEffect) {
+            carte.hp -= 1 + bonus;
+            carte.buffHpBivalence -= 1 + bonus;
+          }
+    
+          // Suppression de la source
+          carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Urgak");
+    
+          // Si plus aucun buff actif, on désactive le flag global
+          if (carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0) {
+            carte.bivalenceEffect = false;
+          }
+        }
+      });
+    },
   },
   {
     id: 39,
@@ -1304,75 +1365,6 @@ export const cards = [
         carte.hp -= 1;
         carte.degatsRecus = 1;
         carte.animAoE = true;
-      });
-    },
-    bivalence: (cartesBoard) => {
-      cartesBoard.forEach(carte => {
-        if (!carte.bivalenceSources) carte.bivalenceSources = [];
-        const karasha = cartesBoard.find(c => c.nom === "Ka'Rasha la Lieuse d'Esprits");
-        const bonus = karasha ? 1 : 0; // Ka'Rasha amplifie
-        if (carte.famille === "Croc-Noir" && carte.sousFamille === "Marin") {
-          if (carte.bivalenceMarinEffect && !carte.bivalenceSources.includes("Vrak'Nul")) {
-            carte.atk += 1 + bonus;
-            carte.buffAtkBivalence += 1 + bonus;
-            carte.bivalenceEffect = true;
-            carte.bivalenceSources.push("Vrak'Nul");
-          }
-          if (!carte.bivalenceMarinEffect && carte.bivalenceSources.includes("Vrak'Nul")) {
-            carte.atk -= 1 + bonus;
-            carte.buffAtkBivalence -= 1 + bonus;
-            carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Vrak'Nul");
-            if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
-              carte.bivalenceEffect = false;
-            }
-          }
-        }
-        if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
-          if (carte.bivalenceTerrestreEffect && !carte.bivalenceSources.includes("Vrak'Nul")) {
-            carte.hp += 2 + bonus;
-            carte.buffHpBivalence += 2 + bonus;
-            carte.bivalenceEffect = true;
-            carte.bivalenceSources.push("Vrak'Nul");
-          }
-          if (!carte.bivalenceTerrestreEffect && carte.bivalenceSources.includes("Vrak'Nul")) {
-            carte.hp -= 2 + bonus;
-            carte.buffHpBivalence -= 2 + bonus;
-            carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Vrak'Nul");
-            if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
-              carte.bivalenceEffect = false;
-            }
-          }
-        }
-      });
-    },
-    bivalenceSell: (cartesBoard) => {
-      cartesBoard.forEach(carte => {
-        if (!carte.bivalenceSources) return;
-        const karasha = cartesBoard.find(c => c.nom === "Ka'Rasha la Lieuse d'Esprits");
-        const bonus = karasha ? 1 : 0; // Ka'Rasha amplifie
-        // Si la source est présente dans les effets appliqués
-        if (carte.bivalenceSources.includes("Vrak'Nul")) {
-    
-          // Retrait des effets appliqués par cette source
-          if (carte.bivalenceMarinEffect) {
-            
-            carte.atk -= 1 + bonus;
-            carte.buffAtkBivalence -= 1 + bonus;
-          }
-    
-          if (carte.bivalenceTerrestreEffect) {
-            carte.hp -= 2 + bonus;
-            carte.buffHpBivalence -= 2 + bonus;
-          }
-    
-          // Suppression de la source
-          carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Vrak'Nul");
-    
-          // Si plus aucun buff actif, on désactive le flag global
-          if (carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0) {
-            carte.bivalenceEffect = false;
-          }
-        }
       });
     },
   },
@@ -1520,6 +1512,22 @@ export const cards = [
         if (!carte.bivalenceSources) carte.bivalenceSources = [];
         const karasha = cartesBoard.find(c => c.nom === "Ka'Rasha la Lieuse d'Esprits");
         const bonus = karasha ? 1 : 0; // Ka'Rasha amplifie
+        if (carte.famille === "Croc-Noir" && carte.sousFamille === "Marin") {
+          if (carte.bivalenceMarinEffect && !carte.bivalenceSources.includes("Na'Kra")) {
+            carte.atk += 2 + bonus;
+            carte.buffAtkBivalence += 2 + bonus;
+            carte.bivalenceEffect = true;
+            carte.bivalenceSources.push("Na'Kra");
+          }
+          if (!carte.bivalenceMarinEffect && carte.bivalenceSources.includes("Na'Kra")) {
+            carte.atk -= 2 + bonus;
+            carte.buffAtkBivalence -= 2 + bonus;
+            carte.bivalenceSources = carte.bivalenceSources.filter(src => src !== "Na'Kra");
+            if(carte.buffHpBivalence === 0 && carte.buffAtkBivalence === 0){
+              carte.bivalenceEffect = false;
+            }
+          }
+        }
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
           if (carte.bivalenceTerrestreEffect && !carte.bivalenceSources.includes("Na'Kra")) {
             carte.hp += 2 + bonus;
@@ -1547,6 +1555,11 @@ export const cards = [
         if (carte.bivalenceSources.includes("Na'Kra")) {
     
           // Retrait des effets appliqués par cette source
+          if (carte.bivalenceMarinEffect) {
+            
+            carte.atk -= 2 + bonus;
+            carte.buffAtkBivalence -= 2 + bonus;
+          }
     
           if (carte.bivalenceTerrestreEffect) {
             carte.hp -= 2 + bonus;
@@ -1634,9 +1647,8 @@ export const cards = [
         carte.atk += crocNoir.length;
         if(carte.bivalenceTerrestreEffect){
           carte.hp += 2;
-          carte.atk += 1;
         }else{
-          carte.hp += 1;
+          carte.atk += 1;
         } 
       }     
     },
@@ -1736,8 +1748,6 @@ export const cards = [
         if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
           carte.atk += 1;
           carte.buffAtk += 1;
-          carte.hp += 2;
-          carte.buffHp += 2;
           carte.auraEffect = true;
         }
         
@@ -1748,8 +1758,6 @@ export const cards = [
         if (carte.auraEffect === true && carte.sousFamille === "Terrestre") {
           carte.atk -= 1;
           carte.buffAtk -= 1;
-          carte.hp -= 2;
-          carte.buffHp -= 2;
           if(carte.buffHp === 0 && carte.buffAtk === 0){
             carte.auraEffect = false
           }        
@@ -1760,8 +1768,6 @@ export const cards = [
       if (carte.famille === "Croc-Noir" && carte.sousFamille === "Terrestre") {
         carte.atk += 1;
         carte.buffAtk += 1;
-        carte.hp += 2;
-        carte.buffHp += 2;
         carte.auraEffect = true; 
       }     
     },

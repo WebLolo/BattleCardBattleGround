@@ -170,8 +170,6 @@ export async function TourIa({
   if (tourIa === 1) {
     console.log("1er tour, on achete une carte random" )
     let randomCard = shopCards[Math.floor(Math.random() * shopCards.length)]
-    console.log(randomCard)
-    
 
 
 
